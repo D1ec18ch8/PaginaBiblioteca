@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Pública de Puntarenas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-nav">
+        <div class="logo">
+            <img src="img/logoSinabi.jpg" alt="SINABI Logo"> 
+            <span>Biblioteca Pública de Puntarenas</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#biblioteca">Biblioteca</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="#servicios">Servicios</a>
+            <a href="https://catalogo.sinabi.go.cr/janium-bin/busqueda_rapida.pl?Id=20250609225627" target="_blank">Catálogo</a>
+            <a href="https://www.sinabi.go.cr/Transparencia/" target="_blank">Transparencia</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubre, Aprende y Conecta en tu Biblioteca Pública de Puntarenas.</h1>
+        </div>
+    </section>
+
+    <section class="info-sections">
+        <div class="info-section-card" id="biblioteca">
+            <h2>Biblioteca</h2>
+            <p>La Biblioteca Pública de Puntarenas es un espacio cultural y educativo para toda la comunidad. Ofrecemos una amplia colección de libros, recursos digitales y un ambiente acogedor para el estudio y la lectura.</p>
+        </div>
+        <div class="info-section-card">
+            <h2>Actividades</h2>
+            <p>Participa en nuestras jornadas de lectura, talleres, y eventos culturales. Fomentamos la participación comunitaria y el amor por el conocimiento. ¡Explora nuestra agenda de actividades!</p>
+        </div>
+        <div class="info-section-card" id="servicios">
+            <h2>Servicios</h2>
+            <p>Aquí puedes encontrar información sobre las iniciativas y proyectos especiales de la Biblioteca Pública de Puntarenas, así como programas de extensión cultural y digital.</p>
+        </div>
+    </section>
+
+    <section class="lighthouse-section">
+        <img src="img/libro.png" alt="Icono de Libro"> <p>Tu conocimiento comienza aquí: Un espacio para el aprendizaje y la conexión.</p>
+    </section>
+
+    <section class="news-section" id="contacto">
+         <h2>Contáctanos</h2>
+        <div class="contact-form-container">
+            <p class="form-intro">Envíanos tus sugerencias o consultas. ¡Tu opinión es importante para nosotros!</p>
+            <form class="contact-form" action="mailto:bppuntarenas@sinabi.go.cr" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="Correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="Telefono">
+                </div>
+                <div class="form-group">
+                    <label for="pais">País</label>
+                    <input type="text" id="pais" name="Pais">
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentario</label>
+                    <textarea id="comentario" name="Comentario" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar Sugerencia</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="left-content">
+        <img src="img/logoSinabi.jpg" alt="SINABI Logo Footer"> <span>© Biblioteca Pública de Puntarenas</span>
+    </div>
+    <nav class="footer-nav">
+        <a href="#biblioteca">Biblioteca</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="#servicios">Servicios</a>
+    </nav>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/bppuntarenas.sinabi.mcj.cr/" target="_blank" aria-label="Facebook de SINABI">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/bibliotecapublicadepuntarenas/" target="_blank" aria-label="Instagram de SINABI">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+</footer>
