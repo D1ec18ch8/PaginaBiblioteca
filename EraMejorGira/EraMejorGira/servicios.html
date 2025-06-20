@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuestros Servicios Bibliotecarios</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <!-- Hoja de estilos local -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/servicios.css">
+
+</head>
+<body>
+
+<section id="servicios" class="container">
+   <h2 class="text-center mb-5">Nuestros Servicios Bibliotecarios</h2>
+
+   <div class="servicios-grid">
+       <div class="servicio-card card p-4" onclick="openModal('modal1')">
+           <div class="servicio-icon">📚</div>
+           <h3>Préstamo de libros en sala</h3>
+           <p>Los usuarios pueden consultar y leer libros dentro de las instalaciones de la biblioteca...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div class="servicio-card card p-4" onclick="openModal('modal2')">
+           <div class="servicio-icon">🏠</div>
+           <h3>Préstamo de libros a domicilio</h3>
+           <p>Permite llevar libros a casa. Requiere afiliación previa...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div class="servicio-card card p-4" onclick="openModal('modal3')">
+           <div class="servicio-icon">💻</div>
+           <h3>Referencia virtual</h3>
+           <p>Atendemos consultas de información a través de nuestros canales digitales...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div class="servicio-card card p-4" onclick="openModal('modal4')">
+           <div class="servicio-icon">🖋️</div>
+           <h3>Archivo documental</h3>
+           <p>Ofrecemos acceso a documentos y recursos históricos...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div class="servicio-card card p-4" onclick="openModal('modal5')">
+           <div class="servicio-icon">🧸</div>
+           <h3>Sala Infantil</h3>
+           <p>Espacio dedicado a niñas y niños con acceso a libros infantiles...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div class="servicio-card card p-4" onclick="openModal('modal6')">
+           <div class="servicio-icon">🚌</div>
+           <h3>Actividades de extensión bibliotecaria</h3>
+           <p>Realizamos visitas a comunidades para promover la lectura...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div class="servicio-card card p-4" onclick="openModal('modal7')">
+           <div class="servicio-icon">🎭</div>
+           <h3>Actividades culturales y de formación virtuales</h3>
+           <p>Ofrecemos talleres y actividades culturales en línea...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+   </div>
+</section>
+
+<!-- Modales -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>📚 Préstamo de libros en sala</h2>
+    <p>Los usuarios pueden consultar y leer libros dentro de las instalaciones de la biblioteca, sin necesidad de afiliación.</p>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h2>🏠 Préstamo de libros a domicilio</h2>
+    <p>Permite llevar libros a casa. Requiere afiliación previa, completando el siguiente formulario: <a href="https://forms.office.com/r/bQxGDnEBmt" target="_blank">Formulario de afiliación</a>.</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h2>💻 Referencia virtual</h2>
+    <p>Atendemos consultas de información a través de nuestros canales digitales: correo electrónico, Instagram, Facebook y WhatsApp. Un servicio ágil y accesible desde cualquier lugar.</p>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal4')">&times;</span>
+    <h2>🖋️ Archivo documental</h2>
+    <p>Ofrecemos acceso a documentos y recursos históricos y especializados, disponibles para consulta en sala.</p>
+  </div>
+</div>
+
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal5')">&times;</span>
+    <h2>🧸 Sala Infantil</h2>
+    <p>Espacio dedicado a niñas y niños con acceso a libros infantiles y actividades lúdicas. Se puede utilizar libremente durante el horario de atención.</p>
+  </div>
+</div>
+
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal6')">&times;</span>
+    <h2>🚌 Actividades de extensión bibliotecaria</h2>
+    <p>Realizamos visitas a comunidades, centros educativos y otros espacios para promover la lectura y el acceso a la información.</p>
+  </div>
+</div>
+
+<div id="modal7" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal7')">&times;</span>
+    <h2>🎭 Actividades culturales y de formación virtuales</h2>
+    <p>Ofrecemos talleres, cursos, cuentacuentos y otras actividades culturales y educativas en línea, dirigidas a personas de todas las edades.</p>
+  </div>
+</div>
+
+<!-- Script para manejar los modales -->
+<script>
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+  
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+  
+  // Cerrar al hacer clic fuera del modal
+  window.onclick = function(event) {
+    if (event.target.className === "modal") {
+      event.target.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  }
+</script>
+
+    <script>
+        // Cargar header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+            });
+
+        // Cargar footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</body>
+</html>
