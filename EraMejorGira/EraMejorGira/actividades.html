@@ -17,22 +17,7 @@
   <link rel="stylesheet" href="actividades.css" />
 </head>
 <body>
-
-  <!-- Header (igual al index) -->
-  <header class="top-nav">
-    <div class="logo">
-      <img src="img/logoSinabi.jpg" alt="SINABI Logo" />
-      <span>Biblioteca Pública de Puntarenas</span>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html#biblioteca">Biblioteca</a>
-      <a href="actividades.html" class="active">Actividades</a>
-      <a href="main.html#servicios">Servicios</a>
-      <a href="https://catalogo.sinabi.go.cr/janium-bin/busqueda_rapida.pl?Id=20250609225627" target="_blank">Catálogo</a>
-      <a href="https://www.sinabi.go.cr/Transparencia/" target="_blank">Transparencia</a>
-      <a href="index.html#contacto">Contacto</a>
-    </nav>
-  </header>
+  <!-- El header se cargará aquí dinámicamente -->
 
   <main>
     <!-- Introducción -->
@@ -65,32 +50,26 @@
     </div>
   </main>
 
-  <!-- Footer (igual al index) -->
-  <footer class="footer">
-    <div class="left-content">
-      <img src="img/logoSinabi.jpg" alt="SINABI Logo Footer" />
-      © Biblioteca Pública de Puntarenas
-    </div>
-    <nav class="footer-nav">
-      <a href="index.html#biblioteca">Biblioteca</a>
-      <a href="actividades.html">Actividades</a>
-      <a href="index.html#servicios">Servicios</a>
-    </nav>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/bppuntarenas.sinabi.mcj.cr/" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/bibliotecapublicadepuntarenas/" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://whatsapp.com/channel/0029Vat3oOj9mrGb1ag5kb0D" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-    </div>
-  </footer>
+  <!-- El footer se cargará aquí dinámicamente -->
 
   <!-- Script de funcionalidades -->
   <script src="actividadesFunciones.js"></script>
   
+  <!-- Script para cargar header y footer -->
+  <script>
+    // Cargar header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+      });
+
+    // Cargar footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('body').insertAdjacentHTML('beforeend', data);
+      });
+  </script>
 </body>
 </html>

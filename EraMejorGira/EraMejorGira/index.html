@@ -13,27 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="top-nav">
-        <div class="logo">
-            <img src="img/logoSinabi.jpg" alt="SINABI Logo"> 
-            <span>Biblioteca Pública de Puntarenas</span>
-        </div>
-        <nav class="nav-links">
-            <a href="#biblioteca">Biblioteca</a>
-            <a href="actividades.html">Actividades</a>
-            <a href="#servicios">Servicios</a>
-            <a href="https://catalogo.sinabi.go.cr/janium-bin/busqueda_rapida.pl?Id=20250609225627" target="_blank">Catálogo</a>
-            <a href="https://www.sinabi.go.cr/Transparencia/" target="_blank">Transparencia</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Descubre, Aprende y Conecta en tu Biblioteca Pública de Puntarenas.</h1>
-        </div>
-    </section>
+    <!-- El header se cargará aquí dinámicamente -->
 
     <section class="info-sections">
         <div class="info-section-card" id="biblioteca">
@@ -84,24 +64,22 @@
         </div>
     </section>
 
-    <footer class="footer">
-    <div class="left-content">
-        <img src="img/logoSinabi.jpg" alt="SINABI Logo Footer"> <span>© Biblioteca Pública de Puntarenas</span>
-    </div>
-    <nav class="footer-nav">
-        <a href="#biblioteca">Biblioteca</a>
-        <a href="actividades.html">Actividades</a>
-        <a href="#servicios">Servicios</a>
-    </nav>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/bppuntarenas.sinabi.mcj.cr/" target="_blank" aria-label="Facebook de SINABI">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/bibliotecapublicadepuntarenas/" target="_blank" aria-label="Instagram de SINABI">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://whatsapp.com/channel/0029Vat3oOj9mrGb1ag5kb0D" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-    </div>
-</footer>
+    <!-- El footer se cargará aquí dinámicamente -->
+
+    <script>
+        // Cargar header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+            });
+
+        // Cargar footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</body>
+</html>
