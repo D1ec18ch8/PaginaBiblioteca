@@ -69,10 +69,11 @@ function setupModal(eventos) {
   const titleEl = modal.querySelector('#modalTitle');
   const datesEl = modal.querySelector('#modalDates');
   const placeEl = modal.querySelector('#modalPlace');
+  const placeSection = modal.querySelector('#modalPlaceSection');
   const modeEl = modal.querySelector('#modalMode');
   const reqsEl = modal.querySelector('#modalReqs');
   const groupsEl = modal.querySelector('#modalGroups');
-  const formEl = modal.querySelector('#modalForm');
+  const formsEl = modal.querySelector('#modalForms');
 
   document.body.addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-mas')) {
@@ -80,7 +81,12 @@ function setupModal(eventos) {
       const ev = eventos[idx];
       titleEl.textContent = ev.Título;
       datesEl.textContent = `Inicio: ${ev.Fecha_inicio} • Fin: ${ev.Fecha_fin || '–'}`;
-      placeEl.textContent = ev.Lugar || '–';
+      if (ev.Lugar?.trim()) {
+        placeEl.textContent = ev.Lugar;
+        placeSection.style.display = '';
+      } else {
+        placeSection.style.display = 'none';
+      }
       modeEl.textContent = ev.Modalidad || '–';
       reqsEl.innerHTML = ev.Requisitos
         ? ev.Requisitos.split(';').map(r => `<li>${r.trim()}</li>`).join('')
@@ -88,7 +94,21 @@ function setupModal(eventos) {
       groupsEl.innerHTML = ev.Grupos
         ? ev.Grupos.split(';').map(g => `<li>${g.trim()}</li>`).join('')
         : '<li>–</li>';
-      formEl.href = ev.Form || '#';
+      formsEl.innerHTML = '';
+      const grupos = ev.Grupos ? ev.Grupos.split(';') : [];
+      const formularios = ev.Formularios ? ev.Formularios.split(';') : [];
+
+      if (grupos.length === 1 && formularios.length === 1) {
+        formsEl.innerHTML = `<li><a href="${formularios[0].trim()}" target="_blank" class="modal-link">Formulario de inscripción</a></li>`;
+      } else if (grupos.length === formularios.length) {
+        formsEl.innerHTML = grupos.map((g, i) => {
+          const grupo = g.trim();
+          const form = formularios[i].trim();
+          return `<li><a href="${form}" target="_blank" class="modal-link">Formulario para ${grupo}</a></li>`;
+        }).join('');
+      } else {
+        formsEl.innerHTML = '<li>–</li>';
+      }
       modal.classList.add('active');
     }
     if (e.target === closeBtn || e.target === modal) {
