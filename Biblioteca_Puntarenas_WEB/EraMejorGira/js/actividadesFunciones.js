@@ -122,3 +122,4 @@ function setupModal(eventos) {
 }
 
 window.addEventListener('load', cargarEventos);
+

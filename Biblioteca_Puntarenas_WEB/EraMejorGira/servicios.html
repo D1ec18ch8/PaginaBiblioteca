@@ -23,42 +23,42 @@
    <h2 class="text-center mb-5">Nuestros Servicios Bibliotecarios</h2>
 
    <div class="servicios-grid">
-       <div class="servicio-card card p-4" onclick="openModal('modal1')">
+       <div id="prestamo-sala" class="servicio-card card p-4" onclick="openModal('modal1')">
            <div class="servicio-icon">📚</div>
            <h3>Préstamo de libros en sala</h3>
            <p>Los usuarios pueden consultar y leer libros dentro de las instalaciones de la biblioteca...</p>
            <button class="btn btn-outline-primary mt-2">Ver detalles</button>
        </div>
 
-       <div class="servicio-card card p-4" onclick="openModal('modal2')">
+       <div id="prestamo-domicilio" class="servicio-card card p-4" onclick="openModal('modal2')">
            <div class="servicio-icon">🏠</div>
            <h3>Préstamo de libros a domicilio</h3>
            <p>Permite llevar libros a casa. Requiere afiliación previa...</p>
            <button class="btn btn-outline-primary mt-2">Ver detalles</button>
        </div>
 
-       <div class="servicio-card card p-4" onclick="openModal('modal3')">
+       <div id="referencia-virtual" class="servicio-card card p-4" onclick="openModal('modal3')">
            <div class="servicio-icon">💻</div>
            <h3>Referencia virtual</h3>
            <p>Atendemos consultas de información a través de nuestros canales digitales...</p>
            <button class="btn btn-outline-primary mt-2">Ver detalles</button>
        </div>
 
-       <div class="servicio-card card p-4" onclick="openModal('modal4')">
+       <div id="archivo-documental" class="servicio-card card p-4" onclick="openModal('modal4')">
            <div class="servicio-icon">🖋️</div>
            <h3>Archivo documental</h3>
            <p>Ofrecemos acceso a documentos y recursos históricos...</p>
            <button class="btn btn-outline-primary mt-2">Ver detalles</button>
        </div>
 
-       <div class="servicio-card card p-4" onclick="openModal('modal5')">
+       <div id="sala-infantil" class="servicio-card card p-4" onclick="openModal('modal5')">
            <div class="servicio-icon">🧸</div>
            <h3>Sala Infantil</h3>
            <p>Espacio dedicado a niñas y niños con acceso a libros infantiles...</p>
            <button class="btn btn-outline-primary mt-2">Ver detalles</button>
        </div>
 
-       <div class="servicio-card card p-4" onclick="openModal('modal6')">
+       <div id="extension-bibliotecaria" class="servicio-card card p-4" onclick="openModal('modal6')">
            <div class="servicio-icon">🚌</div>
            <h3>Actividades de extensión bibliotecaria</h3>
            <p>Realizamos visitas a comunidades para promover la lectura...</p>
@@ -150,7 +150,37 @@
       document.body.style.overflow = "auto";
     }
   }
+
+  // Scroll suave al cargar la página con hash
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        // Añadir clase de highlight temporal
+          target.classList.add('highlight-section');
+          setTimeout(() => {
+            target.classList.remove('highlight-section');
+          }, 2000);
+        }, 100);
+      }
+    }
+  });
 </script>
+
+<!-- Estilo para el highlight temporal -->
+<style>
+  .highlight-section {
+    animation: highlight 2s ease;
+    box-shadow: 0 0 0 2px var(--accent-orange);
+  }
+  
+  @keyframes highlight {
+    0% { box-shadow: 0 0 0 10px var(--accent-orange); }
+    100% { box-shadow: 0 0 0 2px var(--accent-orange); }
+  }
+</style>
 
     <script>
         // Cargar header

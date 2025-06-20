@@ -1,4 +1,26 @@
 /* style.css */
+.whatsapp-options {
+    display: flex;
+    gap: 15px;
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+}
+
+.whatsapp-options a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.whatsapp-options span {
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
 
 :root {
     --primary-blue: #223f66; /* Un azul más oscuro para el SINABI */
@@ -324,6 +346,80 @@ body {
     transform: translateY(-3px);
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-blue);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0;
+    border-bottom: 1px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-blue);
+    color: white;
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown .dropbtn {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .dropdown-content a {
+        text-align: center;
+        padding: 10px;
+    }
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
